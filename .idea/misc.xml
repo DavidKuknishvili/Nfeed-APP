@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/drawable/background_rectangle.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/drawable/ic_back.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/drawable/ic_profile.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/drawable/menu_item_color.xml" value="0.11388888888888889" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/drawable/menu_shape.xml" value="0.11388888888888889" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/drawable/profile_rectangle.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/layout/add.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/layout/edit_profile.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/layout/firstpage.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/layout/home.xml" value="0.176" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/layout/main.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/layout/mainpage.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/layout/news.xml" value="0.4" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/layout/profile.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/layout/resetpassword.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/layout/saved.xml" value="0.2" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/layout/signin.xml" value="0.4" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/layout/signup.xml" value="0.4" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/menu/menu.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Nfeed/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.26614583333333336" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

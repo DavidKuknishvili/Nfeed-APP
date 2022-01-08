@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation1"
+    app:startDestination="@id/firstPage">
+
+    <fragment
+        android:id="@+id/firstPage"
+        android:name="com.example.nfeed.fragments1.FirstPage"
+        android:label="FirstPage"
+        tools:layout="@layout/firstpage">
+
+        <action
+            android:id="@+id/action_firstPage_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_firstPage_to_signIn"
+            app:destination="@id/signIn" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.example.nfeed.fragments1.SignUp"
+        android:label="SignUp"
+        tools:layout="@layout/signup">
+        <action
+            android:id="@+id/action_signUp_to_editProfile"
+            app:destination="@id/editProfile" />
+        <action
+            android:id="@+id/action_signUp_to_signIn"
+            app:destination="@id/signIn" />
+    </fragment>
+    <fragment
+        android:id="@+id/signIn"
+        android:name="com.example.nfeed.fragments1.SignIn"
+        android:label="SignIn"
+        tools:layout="@layout/signin">
+        <action
+            android:id="@+id/action_signIn_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_signIn_to_resetPassword"
+            app:destination="@id/ResetPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfile"
+        android:name="com.example.nfeed.fragments1.EditProfile"
+        android:label="EditProfile"
+        tools:layout="@layout/edit_profile">
+        <action
+            android:id="@+id/action_editProfile_to_signIn"
+            app:destination="@id/signIn" />
+    </fragment>
+    <fragment
+        android:id="@+id/ResetPassword"
+        android:name="com.example.nfeed.fragments1.ResetPassword"
+        android:label="ResetPassword"
+        tools:layout="@layout/resetpassword">
+        <action
+            android:id="@+id/action_resetPassword_to_signIn"
+            app:destination="@id/signIn" />
+    </fragment>
+</navigation>

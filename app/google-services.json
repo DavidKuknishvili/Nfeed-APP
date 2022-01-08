@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "99202797280",
+    "project_id": "nfeed-8ca45",
+    "storage_bucket": "nfeed-8ca45.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99202797280:android:9bedaadfacafccf16c8a85",
+        "android_client_info": {
+          "package_name": "com.example.nfeed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "99202797280-081eav6j6h0ln75sbc5cvs39k17mi8d7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByLy0zaf6ChZ1x5XiavIFXvTwMtrlj3Kw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "99202797280-081eav6j6h0ln75sbc5cvs39k17mi8d7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
