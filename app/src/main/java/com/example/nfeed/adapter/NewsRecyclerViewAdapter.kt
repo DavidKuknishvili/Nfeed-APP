@@ -9,28 +9,23 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.nfeed.News
 import com.example.nfeed.R
+import com.example.nfeed.model.Article
+import com.example.nfeed.model.Model
 
-class NewsRecyclerViewAdapter(private var list: List<News>): RecyclerView.Adapter<NewsRecyclerViewAdapter.NewsViewHolder>() {
+class NewsRecyclerViewAdapter(private var list: Model): RecyclerView.Adapter<NewsRecyclerViewAdapter.NewsViewHolder>() {
 
     class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val imageView: ImageView
-        val title: TextView
-        val info: TextView
+        val imageView: ImageView = itemView.findViewById(R.id.image)
+        val title: TextView = itemView.findViewById(R.id.title)
+        val info: TextView = itemView.findViewById(R.id.info)
 
-        init {
-            imageView = itemView.findViewById(R.id.image)
-            title = itemView.findViewById(R.id.title)
-            info = itemView.findViewById(R.id.info)
-        }
-
-        fun setData(news: News){
+        fun setData(news: Article){
             Glide.with(itemView.context)
-                .load(news.imageUrl)
+                .load(news.urlToImage)
                 .centerCrop()
                 .into(imageView)
 
-            title.text = news.title
-            info.text = news.info
+
 
         }
 
@@ -43,11 +38,13 @@ class NewsRecyclerViewAdapter(private var list: List<News>): RecyclerView.Adapte
     }
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-        val news = list[position]
+        val news = list.articles[position]
         holder.setData(news)
+        holder.title.text = news.title
+        holder.info.text = news.description
 
     }
 
-    override fun getItemCount() = list.size
+    override fun getItemCount() = list.articles.size
 
 }

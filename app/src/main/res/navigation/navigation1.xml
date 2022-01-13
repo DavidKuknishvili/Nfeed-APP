@@ -26,7 +26,9 @@
         tools:layout="@layout/signup">
         <action
             android:id="@+id/action_signUp_to_editProfile"
-            app:destination="@id/editProfile" />
+            app:destination="@id/editProfile"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/signUp"/>
         <action
             android:id="@+id/action_signUp_to_signIn"
             app:destination="@id/signIn" />
