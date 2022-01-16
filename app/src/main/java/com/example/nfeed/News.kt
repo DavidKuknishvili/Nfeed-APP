@@ -1,8 +1,8 @@
 package com.example.nfeed
 
 data class News(
-    var title: String,
-    var info: String,
-    var imageUrl: String
+    var title: String? = null,
+    var info: String? = null,
+    var imageUrl: String? = null
 
 )

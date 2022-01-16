@@ -3,25 +3,18 @@ package com.example.nfeed.fragments2
 
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
-import android.util.Log.d
 import android.view.View
 import android.widget.ProgressBar
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nfeed.News
 import com.example.nfeed.R
 import com.example.nfeed.adapter.NewsRecyclerViewAdapter
 import com.example.nfeed.model.Model
 import com.example.nfeed.network.NetworkClient
 import com.google.android.material.snackbar.Snackbar
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class Home:Fragment(R.layout.home) {
     private lateinit var progressBar:ProgressBar
@@ -45,8 +38,6 @@ class Home:Fragment(R.layout.home) {
 
         val response = NetworkClient.api.getNews()
         val body = response.body()
-
-
 
         if (response.isSuccessful){
             setRecycler(body!!)

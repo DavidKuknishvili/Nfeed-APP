@@ -9,7 +9,11 @@
         android:id="@+id/home"
         android:name="com.example.nfeed.fragments2.Home"
         android:label="Home"
-        tools:layout="@layout/home"/>
+        tools:layout="@layout/home">
+        <action
+            android:id="@+id/action_home_to_fullInfo"
+            app:destination="@id/fullInfo" />
+    </fragment>
     <fragment
         android:id="@+id/profile"
         android:name="com.example.nfeed.fragments2.Profile"
@@ -20,4 +24,22 @@
         android:name="com.example.nfeed.fragments2.Saved"
         android:label="Saved"
         tools:layout="@layout/saved"/>
+    <fragment
+        android:id="@+id/fullInfo"
+        android:name="com.example.nfeed.fragments2.FullInfo"
+        android:label="FullInfo"
+        tools:layout="@layout/full_news">
+        <argument
+            android:name="sTitle"
+            app:argType="string"
+            android:defaultValue="title" />
+        <argument
+            android:name="sDescription"
+            app:argType="string"
+            android:defaultValue="description" />
+        <argument
+            android:name="sUrl"
+            app:argType="string"
+            android:defaultValue="URL" />
+    </fragment>
 </navigation>
