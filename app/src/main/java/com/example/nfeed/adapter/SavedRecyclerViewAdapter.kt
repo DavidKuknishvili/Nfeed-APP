@@ -5,30 +5,59 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.nfeed.News
 import com.example.nfeed.R
-import com.example.nfeed.model.Model
+import com.example.nfeed.fragments2.HomeDirections
+import com.example.nfeed.fragments2.SavedDirections
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import kotlinx.coroutines.channels.ticker
 
-class SavedRecyclerViewAdapter(private var list: ArrayList<News>): RecyclerView.Adapter<SavedRecyclerViewAdapter.SavedNewsViewHolder>() {
+class SavedRecyclerViewAdapter(private var list: List<News>): RecyclerView.Adapter<SavedRecyclerViewAdapter.SavedNewsViewHolder>() {
 
 
     class SavedNewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val imageView: ImageView = itemView.findViewById(R.id.image)
         val title: TextView = itemView.findViewById(R.id.title)
-        val info: TextView = itemView.findViewById(R.id.info)
 
-        fun setData(savedNews: News){
+
+
+        fun setData(savedNews: News) {
 
             Glide.with(itemView.context)
                 .load(savedNews.imageUrl)
                 .centerCrop()
                 .into(imageView)
 
+
+            itemView.setOnClickListener {
+
+                val gTitle = savedNews.title.toString()
+                val gContent = savedNews.content.toString()
+                val gUrlImage = savedNews.imageUrl.toString()
+                val gUrl = savedNews.url.toString()
+                val author = savedNews.author.toString()
+                val source = savedNews.source.toString()
+                val data = savedNews.data.toString()
+
+                val navController = Navigation.findNavController(itemView)
+
+
+                val action1 = SavedDirections.actionSavedToFullInfo(
+                    gTitle,
+                    gContent,
+                    gUrlImage,
+                    gUrl,
+                    author,
+                    source,
+                    data
+                )
+                navController.navigate(action1)
+
+
+            }
 
         }
 
@@ -44,7 +73,7 @@ class SavedRecyclerViewAdapter(private var list: ArrayList<News>): RecyclerView.
         val savedNews = list[position]
         holder.setData(savedNews)
         holder.title.text = savedNews.title
-        holder.info.text = savedNews.info
+
 
     }
 

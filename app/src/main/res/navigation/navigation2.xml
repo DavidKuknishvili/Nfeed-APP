@@ -3,7 +3,77 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation2"
-    app:startDestination="@id/home">
+    app:startDestination="@id/firstPage">
+
+
+
+    <fragment
+        android:id="@+id/firstPage"
+        android:name="com.example.nfeed.fragments1.FirstPage"
+        android:label="FirstPage"
+        tools:layout="@layout/firstpage">
+
+        <action
+            android:id="@+id/action_firstPage_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_firstPage_to_signIn"
+            app:destination="@id/signIn" />
+        <action
+            android:id="@+id/action_firstPage_to_home"
+            app:destination="@id/home" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.example.nfeed.fragments1.SignUp"
+        android:label="SignUp"
+        tools:layout="@layout/signup">
+        <action
+            android:id="@+id/action_signUp_to_editProfile"
+            app:destination="@id/editProfile"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/signUp"/>
+        <action
+            android:id="@+id/action_signUp_to_signIn"
+            app:destination="@id/signIn" />
+    </fragment>
+    <fragment
+        android:id="@+id/signIn"
+        android:name="com.example.nfeed.fragments1.SignIn"
+        android:label="SignIn"
+        tools:layout="@layout/signin">
+        <action
+            android:id="@+id/action_signIn_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_signIn_to_resetPassword"
+            app:destination="@id/ResetPassword" />
+        <action
+            android:id="@+id/action_signIn_to_home"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfile"
+        android:name="com.example.nfeed.fragments1.EditProfile"
+        android:label="EditProfile"
+        tools:layout="@layout/edit_profile">
+        <action
+            android:id="@+id/action_editProfile_to_home"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/ResetPassword"
+        android:name="com.example.nfeed.fragments1.ResetPassword"
+        android:label="ResetPassword"
+        tools:layout="@layout/resetpassword">
+        <action
+            android:id="@+id/action_resetPassword_to_signIn"
+            app:destination="@id/signIn" />
+    </fragment>
+
+
+
 
     <fragment
         android:id="@+id/home"
@@ -18,28 +88,64 @@
         android:id="@+id/profile"
         android:name="com.example.nfeed.fragments2.Profile"
         android:label="Profile"
-        tools:layout="@layout/profile"/>
+        tools:layout="@layout/profile">
+        <action
+            android:id="@+id/action_profile_to_changePassword2"
+            app:destination="@id/changePassword2" />
+        <action
+            android:id="@+id/action_profile_to_firstPage"
+            app:destination="@id/firstPage" />
+        <action
+            android:id="@+id/action_profile_to_editProfile"
+            app:destination="@id/editProfile" />
+    </fragment>
     <fragment
         android:id="@+id/saved"
         android:name="com.example.nfeed.fragments2.Saved"
         android:label="Saved"
-        tools:layout="@layout/saved"/>
+        tools:layout="@layout/saved">
+        <action
+            android:id="@+id/action_saved_to_fullInfo"
+            app:destination="@id/fullInfo" />
+    </fragment>
     <fragment
         android:id="@+id/fullInfo"
         android:name="com.example.nfeed.fragments2.FullInfo"
         android:label="FullInfo"
         tools:layout="@layout/full_news">
         <argument
-            android:name="sTitle"
-            app:argType="string"
-            android:defaultValue="title" />
+            android:name="gTitle"
+            android:defaultValue="title"
+            app:argType="string" />
         <argument
-            android:name="sDescription"
-            app:argType="string"
-            android:defaultValue="description" />
+            android:name="gDescription"
+            android:defaultValue="   "
+            app:argType="string" />
         <argument
-            android:name="sUrl"
+            android:name="gUrlImage"
+            android:defaultValue="URL"
+            app:argType="string" />
+        <argument
+            android:name="gUrL"
+            android:defaultValue="URL"
+            app:argType="string" />
+        <argument
+            android:name="gauthor"
             app:argType="string"
-            android:defaultValue="URL" />
+            android:defaultValue="Unknown" />
+        <argument
+            android:name="gsource"
+            app:argType="string"
+            android:defaultValue="NEWS" />
+        <argument
+            android:name="gdata"
+            app:argType="string"
+            android:defaultValue="     " />
+
     </fragment>
+    <fragment
+        android:id="@+id/changePassword2"
+        android:name="com.example.nfeed.fragments1.ChangePassword"
+        android:label="ChangePassword"
+        tools:layout="@layout/change_password"/>
 </navigation>

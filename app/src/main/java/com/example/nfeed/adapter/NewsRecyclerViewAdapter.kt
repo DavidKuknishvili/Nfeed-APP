@@ -1,6 +1,5 @@
 package com.example.nfeed.adapter
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,17 +17,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 
-import androidx.fragment.app.Fragment
-import com.example.nfeed.fragments2.FullInfo
-import com.example.nfeed.MainActivity
-
-
-import androidx.fragment.app.FragmentActivity
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment.findNavController
-import com.example.nfeed.Main
-import com.example.nfeed.fragments2.Home
 import com.example.nfeed.fragments2.HomeDirections
 
 
@@ -57,26 +46,66 @@ class NewsRecyclerViewAdapter(private var list: Model): RecyclerView.Adapter<New
                 val dbSavedNews: DatabaseReference = FirebaseDatabase.getInstance().getReference("News")
 
                 val sTitle = news.title
-                val sDescription = news.description
-                val sUrl = news.urlToImage.toString()
+                val sUrlImage = news.urlToImage.toString()
+                val sUrl = news.url
+                val aAuthor = news.author
+                val sSource = news.source.name
+                val sData = news.publishedAt
+                val sContent = news.content
 
                 val nextNews =  System.currentTimeMillis().toString()
 
-                val savedN = News(sTitle,sDescription,sUrl)
+                val savedN = News(sTitle,sUrlImage,sUrl,aAuthor,sSource,sData,sContent)
                 dbSavedNews.child(auth.currentUser?.uid!!).child(nextNews).setValue(savedN)
 
             }
             itemView.setOnClickListener{
 
-                val sTitle = news.title
-                val sDescription = news.description
-                val sUrl = news.urlToImage.toString()
+                val gTitle = news.title
+                val gContent = news.content
+                val gUrlImage = news.urlToImage.toString()
+                val gUrl = news.url
+                val author = news.author
+                val source = news.source.name
+                val data = news.publishedAt
 
                 val navController = Navigation.findNavController(itemView)
 
+                if (author == null ){
+                    val author1 = "unknown"
 
-                val action1 = HomeDirections.actionHomeToFullInfo(sTitle,sDescription,sUrl)
-                navController.navigate(action1)
+                    val action1 = HomeDirections.actionHomeToFullInfo(gTitle,gContent,gUrlImage,gUrl,author1,source,data )
+                    navController.navigate(action1)
+                }
+                else if (source == null){
+                    val source1 = "News"
+
+                    val action1 = HomeDirections.actionHomeToFullInfo(gTitle,gContent,gUrlImage,gUrl,author,source1,data )
+                    navController.navigate(action1)
+                }
+                else if (data == null){
+                    val data1 = "  "
+
+                    val action1 = HomeDirections.actionHomeToFullInfo(gTitle,gContent,gUrlImage,gUrl,author,source,data1 )
+                    navController.navigate(action1)
+                }
+                else if (gContent == null){
+                    val gContent1 = "  "
+
+                    val action1 = HomeDirections.actionHomeToFullInfo(gTitle,gContent1,gUrlImage,gUrl,author,source,data )
+                    navController.navigate(action1)
+                }
+                else if (gUrlImage == null){
+                    val gUrlImage1 = "  "
+
+                    val action1 = HomeDirections.actionHomeToFullInfo(gTitle,gContent,gUrlImage1,gUrl,author,source,data )
+                    navController.navigate(action1)
+                }
+                else{
+                    val action1 = HomeDirections.actionHomeToFullInfo(gTitle,gContent,gUrlImage,gUrl,author,source,data )
+                    navController.navigate(action1)
+                }
+
 
 
 

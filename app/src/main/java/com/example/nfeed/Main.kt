@@ -36,10 +36,26 @@ class Main : AppCompatActivity() {
         navView.setupWithNavController(controller)
 
 
-
+        controller.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.home -> showBottomNav()
+                R.id.saved -> showBottomNav()
+                R.id.profile -> showBottomNav()
+                else -> hideBottomNav()
+            }
+        }
 
 
 
     }
 
+    private fun showBottomNav() {
+        navView.visibility = View.VISIBLE
+
+    }
+
+    private fun hideBottomNav() {
+        navView.visibility = View.GONE
+
+    }
 }

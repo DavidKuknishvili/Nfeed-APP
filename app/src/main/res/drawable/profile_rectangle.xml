@@ -11,13 +11,18 @@
     <group>
 
         <clip-path
-            android:pathData="M6 0H114C117.314 0 120 2.68629 120 6V114C120 117.314 117.314 120 114 120H6C2.68629 120 0 117.314 0 114V6C0 2.68629 2.68629 0 6 0Z"
+            android:pathData="M60 0C93.1371 0 120 26.8629 120 60C120 93.1371 93.1371 120 60 120C26.8629 120 0 93.1371 0 60C0 26.8629 26.8629 0 60 0Z"
             />
 
         <path
-            android:pathData="M6 0H114C117.314 0 120 2.68629 120 6V114C120 117.314 117.314 120 114 120H6C2.68629 120 0 117.314 0 114V6C0 2.68629 2.68629 0 6 0Z"
-            android:strokeWidth="5"
-            android:strokeColor="#0165FF"
+            android:pathData="M0 0V120H120V0"
+            android:fillColor="#FFFFFF"
+            />
+
+        <path
+            android:pathData="M60 0C93.1371 0 120 26.8629 120 60C120 93.1371 93.1371 120 60 120C26.8629 120 0 93.1371 0 60C0 26.8629 26.8629 0 60 0Z"
+            android:strokeWidth="4"
+            android:strokeColor="#0064FF"
             />
 
     </group>

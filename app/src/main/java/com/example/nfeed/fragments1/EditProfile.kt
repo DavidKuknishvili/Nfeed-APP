@@ -19,7 +19,7 @@ class EditProfile:Fragment(R.layout.edit_profile) {
     private lateinit var full_name: EditText
     private lateinit var url: EditText
     private lateinit var save: Button
-    private lateinit var image: ImageView
+
 
     private val auth = FirebaseAuth.getInstance()
     private val dbUserInfo: DatabaseReference = FirebaseDatabase.getInstance().getReference("UserInfo")
@@ -32,16 +32,19 @@ class EditProfile:Fragment(R.layout.edit_profile) {
         full_name = view.findViewById(R.id.full_name)
         url = view.findViewById(R.id.url)
         save = view.findViewById(R.id.save)
-        image = view.findViewById(R.id.image)
+
 
         save.setOnClickListener {
             val fullName = full_name.text.toString()
             val url = url.text.toString()
 
+
             val userInfo = UserInfo(fullName,url)
             dbUserInfo.child(auth.currentUser?.uid!!).setValue(userInfo)
 
-            findNavController().navigate(R.id.action_editProfile_to_signIn)
+            findNavController().navigate(R.id.action_editProfile_to_home)
+
+
 
 
 
